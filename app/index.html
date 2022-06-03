@@ -31,8 +31,8 @@
                         <li class="header__menu-item">
                             <a class="header__menu-link" href="#">О нас</a>
                         </li>
-                        <li class="header__menu-item submenu">
-                            <a class="header__menu-link" href="#">Услуги</a>
+                        <li class="header__menu-item dropdownWrapp">
+                            <a class="header__menu-link submenu" href="#">Услуги</a>
                             <ul class="header__submenu">
                                 <li class="header__submenu-item">
                                     <a class="header__submenu-link" href="#">Услуга 1</a>
@@ -51,8 +51,8 @@
                         <li class="header__menu-item">
                             <a class="header__menu-link" href="#">Новости</a>
                         </li>
-                        <li class="header__menu-item submenu">
-                            <a class="header__menu-link" href="#">Соглашения</a>
+                        <li class="header__menu-item dropdownWrapp">
+                            <a class="header__menu-link submenu" href="#">Соглашения</a>
                             <ul class="header__submenu">
                                 <li class="header__submenu-item">
                                     <a class="header__submenu-link" href="#">Соглашение 1</a>
@@ -73,7 +73,71 @@
         </div>
     </header>
     <div class="wrapper">
-        <div class="main"></div>
+        <div class="main">
+            <section class="top">
+                <div class="container">
+                    <div class="top__inner">
+                        <form class="top__form">
+                            <h3 class="top__form-title">
+                                Найдём номера под ваши пожелания
+                            </h3>
+                            <div class="top__inputs">
+                                <div class="top__input-wrapp">
+                                    <span class="top__form-subtitle">прибытие</span>
+                                    <input class="top__form-input" id="calendar-from">
+                                </div>
+                                <div class="top__input-wrapp">
+                                    <span class="top__form-subtitle">выезд</span>
+                                    <input class="top__form-input" id="calendar-to">
+                                </div>
+                                <div class="top__select">
+                                    <div class="top__select-wrapp">
+                                        <span class="top__form-subtitle">гости</span>
+                                        <button class="top__select-btn" type="button">Сколько гостей</button>
+                                    </div>
+                                    <div class="top__list-wrapp">
+                                        <ul class="top__select-list">
+                                            <li class="top__select-item">
+                                                <span class="top__item-text">взрослые</span>
+                                                <div class="top__item-counter" data-counter>
+                                                    <button class="top__item-btn less disabled" type="button"></button>
+                                                    <input class="top__item-amount" value="0" disabled>
+                                                    <button class="top__item-btn more" type="button"></button>
+                                                </div>
+                                            </li>
+                                            <li class="top__select-item">
+                                                <span class="top__item-text">дети</span>
+                                                <div class="top__item-counter" data-counter>
+                                                    <button class="top__item-btn less disabled" type="button"></button>
+                                                    <input class="top__item-amount" value="0" disabled>
+                                                    <button class="top__item-btn more" type="button"></button>
+                                                </div>
+                                            </li>
+                                            <li class="top__select-item">
+                                                <span class="top__item-text">младенцы</span>
+                                                <div class="top__item-counter" data-counter>
+                                                    <button class="top__item-btn less disabled" type="button"></button>
+                                                    <input class="top__item-amount" value="0" disabled>
+                                                    <button class="top__item-btn more" type="button"></button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="top__select-btns">
+                                            <button class="top__select-clean" type="button">очистить</button>
+                                            <button class="top__select-apply" type="button">применить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="top__search-btn">подобрать номер</button>
+                        </form>
+                        <p class="top__subtext">
+                            Лучшие номера для вашей работы, отдыха и просто вдохновения
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
         <footer class="footer"></footer>
     </div>
     <script src="js/main.min.js"></script>

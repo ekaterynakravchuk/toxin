@@ -22,24 +22,31 @@
     &__menu {
         display: flex;
         align-items: center;
+        margin: 0 -10px;
     }
     &__menu-item {
         position: relative;
-        &.submenu {
-            padding-right: 25px;
-            background-image: url(../images/expand-arrow.svg);
-            background-size: 12px 10px;
-            background-repeat: no-repeat;
-            background-position: right;
-        }
+        margin: 0 10px;
     }
-    &__menu-item + .header__menu-item,
+    & .submenu {
+        padding-right: 25px;
+        background-image: url(../images/expand-arrow.svg);
+        background-size: 12px 10px;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
     &__link-login,
     &__link-reg {
         margin-left: 20px;
     }
     &__submenu {
         position: absolute;
+        text-align: center;
+        left: -16px;
+        display: none;
+        background-color: #fff;
+        border-radius: 4px;
+        width: 120%;
         &.open {
             display: block;
         }
@@ -52,6 +59,9 @@
         &:hover {
             opacity: 1;
         }
+    }
+    &__submenu-item {
+        margin: 15px 0;
     }
     &__link-login {
         display: inline-block;
@@ -66,10 +76,19 @@
         justify-content: center;
         align-items: center;
         & span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: #fff;
             color: $primary;
-            padding: 8px 18px;
+            width: 83px;
+            height: 30px;
             border-radius: 22px;
+            transition: all .3s;
+        }
+        &:hover span {
+            color: #fff;
+            background: transparent;
         }
     }
     &__link-reg {
@@ -80,6 +99,195 @@
         text-transform: uppercase;
         background: $main-bg;
         border-radius: 22px;
+        transition: all .3s;
+        &:hover {
+            background: $green-gradient;
+        }
+    }
+}
+
+.top {
+    background-image: url(../images/top-bg.png);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    &__inner {
+        padding: 70px 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 830px;
+    }
+    &__form {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        max-width: 380px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__form-title {
+        font-size: 24px;
+        color: $dark;
+        margin-bottom: 20px;
+    }
+    &__inputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__input-wrapp,
+    &__select-wrapp {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    &__input-wrapp {
+        width: 45%;
+    }
+    &__select {
+        width: 100%;
+        position: relative;
+    }
+    &__form-input,
+    &__select-btn {
+        padding: 10px 32px 10px 15px;
+        background-color: transparent;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 4px;
+        color: $dark-grey;
+        text-align: left;
+        background-image: url(../images/expand-arrow.svg);
+        background-position: center right 15px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    &__form-subtitle {
+        text-transform: uppercase;
+        color: $dark;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+    &__list-wrapp {
+        position: absolute;
+        top: calc(100% - 20px);
+        z-index: 2;
+        width: 100%;
+        padding: 13px 7px 13px 15px;
+        background-color: #fff;
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        border-radius: 0 0 4px 4px;
+        border-top: none;
+    }
+    &__select-list {
+        margin-bottom: 13px;
+    }
+    &__select-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 7px;
+    }
+    &__item-text,
+    &__item-amount {
+        font-size: 12px;
+        font-weight: 700;
+        color: $dark;
+        text-transform: uppercase;
+    }
+    &__item-counter {
+        display: flex;
+        align-items: center;
+    }
+    &__item-amount {
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+        border: none;
+        background-color: transparent;
+    }
+    &__item-btn {
+        width: 30px;
+        height: 30px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 50%;
+        background-color: transparent;
+        cursor: pointer;
+        &.more {
+            background-image: url(../images/more.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 8px 8px;
+        }
+        &.less {
+            background-image: url(../images/less.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 8px 8px;
+        }
+        &.disabled {
+            opacity: 0.38;
+            cursor: default;
+        }
+        &:active {
+            background-color: rgba(31, 32, 65, 0.27);
+        }
+    }
+    &__search-btn {
+        color: #fff;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 22px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        background: $main-bg;
+        transition: all .3s;
+        position: relative;
+        margin-top: 10px;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            background-image: url(../images/arrow_forward.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        &:hover {
+            background: $green-gradient;
+        }
+    }
+    &__select-btns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+    }
+    &__select-clean,
+    &__select-apply {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $primary;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0;
+    }
+    &__subtext {
+        align-self: flex-end;
+        max-width: 295px;
+        text-align: right;
+        color: $dark-grey;
     }
 }
 
